@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-songrequests-dev-161458-authRole",
+      "UnauthRoleArn": "arn:aws:iam::392073868385:role/amplify-songrequests-dev-161458-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::392073868385:role/amplify-songrequests-dev-161458-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-songrequests-dev-161458-deployment",
+      "UnauthRoleName": "amplify-songrequests-dev-161458-unauthRole",
+      "StackName": "amplify-songrequests-dev-161458",
+      "StackId": "arn:aws:cloudformation:us-east-1:392073868385:stack/amplify-songrequests-dev-161458/5ea6d500-c95f-11eb-bf8e-0ea3a6460f01",
+      "AmplifyAppId": "dyvdz8qwb9yuh"
+    },
+    "categories": {
+      "function": {
+        "songrequests34721f3a": {
+          "deploymentBucketName": "amplify-songrequests-dev-161458-deployment",
+          "s3Key": "amplify-builds/songrequests34721f3a-6b596e55766270467a32-build.zip"
+        }
+      }
+    }
+  }
+}

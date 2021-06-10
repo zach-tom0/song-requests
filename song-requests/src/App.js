@@ -22,8 +22,29 @@ class App extends React.Component {
     this.setState({[stateName]:event.target.value});
   }
 
-  handleSubmit(name, song, artist){
-    alert(name + ' wants you to play ' + song + ' by ' + artist)
+  handleSubmit(event){
+    alert(this.state.name + ' wants you to play ' + this.state.song + ' by ' + this.state.artist)
+
+    // creates entity
+    // fetch("https://lkfrz7umw5.execute-api.us-east-1.amazonaws.com/dev",
+    // {
+    //   "method": "POST",
+    //   "headers": {
+    //     "content-type": "application/json",
+    //     "accept": "application/json"
+    //   },
+    //   "body": JSON.stringify({
+    //     name: this.stat.name,
+    //     song: this.state.song,
+    //     artist: this.state.artist
+    //   })
+    // })
+    // .then(response => {
+    //   console.log(response)
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
     return;
   }
 
@@ -36,8 +57,7 @@ class App extends React.Component {
           <Input name="artist" placeholder="Artist Name" value={this.state.artist} onChange={this.handleChange}/>
         </div>
         <img src={logo} className="App-logo" alt="logo" />
-          <Button onClick={() =>
-            this.handleSubmit(this.state.name,this.state.song,this.state.artist)}/>
+          <Button onClick={this.handleSubmit}/>
       </header>
     </div>)
   }
