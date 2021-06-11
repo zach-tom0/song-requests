@@ -25,26 +25,25 @@ class App extends React.Component {
   handleSubmit(event){
     alert(this.state.name + ' wants you to play ' + this.state.song + ' by ' + this.state.artist)
 
-    // creates entity
-    // fetch("https://lkfrz7umw5.execute-api.us-east-1.amazonaws.com/dev",
-    // {
-    //   "method": "POST",
-    //   "headers": {
-    //     "content-type": "application/json",
-    //     "accept": "application/json"
-    //   },
-    //   "body": JSON.stringify({
-    //     name: this.stat.name,
-    //     song: this.state.song,
-    //     artist: this.state.artist
-    //   })
-    // })
-    // .then(response => {
-    //   console.log(response)
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // });
+    fetch("https://lkfrz7umw5.execute-api.us-east-1.amazonaws.com/dev",
+    {
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "accept": "application/json"
+      },
+      "body": JSON.stringify({
+        name: this.state.name,
+        song: this.state.song,
+        artist: this.state.artist
+      })
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
     return;
   }
 
