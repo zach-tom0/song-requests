@@ -2,7 +2,6 @@
   text-align: center;
   background-color: #282c34;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,6 +21,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  animation: fadeIn ease 3s;
 }
 
 .App-link {
@@ -72,5 +72,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0%
+  }
+  to{
+    opacity: 100%
   }
 }

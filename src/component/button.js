@@ -1,7 +1,7 @@
 function Button(props) {
     const submit = <button className="App-Button"
     onClick={props.onClick}>
-    Request a Song
+    {props.value}
     </button>
     return submit
   }
