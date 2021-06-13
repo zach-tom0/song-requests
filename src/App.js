@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import FadeIn from 'react-fade-in'
 import Button from './component/button.js';
 import Input from './component/input.js';
 import './App.css';
@@ -8,6 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      animate: false,
       password: null,
       isPasswordCorrect: false,
       name: null,
@@ -69,14 +71,16 @@ class App extends React.Component {
   // .catch(err => {
   //   console.log(err);
   // });})
+
     this.setState({isPasswordCorrect: true});
+
     alert("The password is " + this.state.isPasswordCorrect)
   }
   passwordPage(){
     return(
       <div className="App">
       <header className="App-header">
-        <span><Input placeholder="Enter code"/></span>
+        <span><Input placeholder="Enter code" value={this.state.password}/></span>
         <span><Button value="Enter" onClick={this.handlePasswordSubmit} /></span>
       </header>
     </div>)
@@ -98,12 +102,16 @@ class App extends React.Component {
   }
 
   render() {
-    if(this.state.isPasswordCorrect){
-      return(this.songRequestPage())
+    while(!this.state.isPasswordCorrect){
+      return(
+        <FadeIn>
+          {this.passwordPage()}
+        </FadeIn>)
     }
-    else{
-      return(this.passwordPage())
-    }
+      return(
+        <FadeIn>
+          {this.songRequestPage()}
+        </FadeIn>)
   }
 }
 

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-songrequests-dev-15903-authRole",
+      "UnauthRoleArn": "arn:aws:iam::392073868385:role/amplify-songrequests-dev-15903-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::392073868385:role/amplify-songrequests-dev-15903-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-songrequests-dev-15903-deployment",
+      "UnauthRoleName": "amplify-songrequests-dev-15903-unauthRole",
+      "StackName": "amplify-songrequests-dev-15903",
+      "StackId": "arn:aws:cloudformation:us-east-1:392073868385:stack/amplify-songrequests-dev-15903/75c83120-cc0c-11eb-a2e6-129177fe7919",
+      "AmplifyAppId": "d9plofkfnwgez"
+    }
+  }
+}
