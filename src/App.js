@@ -71,23 +71,26 @@ class App extends React.Component {
   // .catch(err => {
   //   console.log(err);
   // });})
-
-    this.setState({isPasswordCorrect: true});
-
-    alert("The password is " + this.state.isPasswordCorrect)
+    alert(this.state.password)
+    if(this.state.password === 'zach'){
+      this.setState({isPasswordCorrect: true})
+    }
+    else{
+      this.setState({password: ''},)
+    }
   }
   passwordPage(){
     return(
-      <div className="App">
+      <div className="password">
       <header className="App-header">
-        <span><Input placeholder="Enter code" value={this.state.password}/></span>
+        <span><Input name="password" placeholder="Enter code" value={this.state.password} onChange={this.handleChange}/></span>
         <span><Button value="Enter" onClick={this.handlePasswordSubmit} /></span>
       </header>
     </div>)
   }
   songRequestPage(){
     return(
-      <div className="App">
+      <div className="songRequests">
         <header className="App-header">
           <div className="App-Form">
             <Input name="name" placeholder="Your Name" value={this.state.name} onChange={this.handleChange}/>
@@ -108,10 +111,7 @@ class App extends React.Component {
           {this.passwordPage()}
         </FadeIn>)
     }
-      return(
-        <FadeIn>
-          {this.songRequestPage()}
-        </FadeIn>)
+      return(this.songRequestPage())
   }
 }
 
