@@ -72,7 +72,7 @@ class App extends React.Component {
   //   console.log(err);
   // });})
     alert(this.state.password)
-    if(this.state.password === 'zach'){
+    if(this.state.password === 'password'){
       this.setState({isPasswordCorrect: true})
     }
     else{
