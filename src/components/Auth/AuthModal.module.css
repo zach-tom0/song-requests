@@ -1,0 +1,39 @@
+.input {
+    height: 2rem;
+    width: 50%;
+    text-align: center;
+    border-radius:  5px;
+    border-style: none;
+    border-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.input:focus{
+    outline: none;
+}
+
+.button{
+    height: 2rem;
+    width: 25%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-style: none;
+    background-color: #0a3d0371;
+    border-radius:  5px;
+}
+
+.button:hover{
+    background-color: #0a3d0371;
+}
+
+.div {
+    padding:5% 5% 0 5%;
+}
+
+.modalOpen {
+    display: block;
+}
+
+.modalClosed{
+    display: none;
+}

@@ -1,0 +1,18 @@
+.header {
+  width: 98%;
+  height: 3rem;
+  padding-left: 2%;
+  background-color: #0a3d0371;
+  color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
