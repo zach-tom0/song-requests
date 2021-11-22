@@ -1,13 +1,15 @@
-import Card from "../Card/Card";
+import Card from "../AuthCard/AuthCard";
 import Backdrop from "./Backdrop";
 import classes from "./AuthModal.module.css";
 import { useRef, useState } from "react";
-import {FaExclamation}  from "react-icons/fa";
+import { FaExclamation } from "react-icons/fa";
 
 const AuthModal = (props) => {
   const passCodeInputRef = useRef();
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [isCodeCorrect, setIsCodeCorrect] = useState(true);
+
+  const checkPasscode = (passcode) => {};
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +33,7 @@ const AuthModal = (props) => {
                 placeholder={isCodeCorrect ? "Enter Code" : "Incorrect"}
                 ref={passCodeInputRef}
               ></input>
-              {isCodeCorrect ?  "": <FaExclamation color="red" />}
+              {isCodeCorrect ? "" : <FaExclamation color="red" />}
             </div>
             <div className={classes.div}>
               <button className={classes.button} type="submit">
