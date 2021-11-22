@@ -1,5 +1,6 @@
 import classes from "./SearchCard.module.css";
 import data from "../../resources/data";
+import { BallTriangle } from "react-loading-icons";
 import { useState, useRef } from "react";
 
 const SearchCard = (props) => {
@@ -22,18 +23,25 @@ const SearchCard = (props) => {
         ref={searchInputValue}
       ></input>
       <div className={isSearching ? classes.results : classes.noResults}>
-        <ul>
-          {data.map((item) => (
+        {data.length < 1 ? (
+          <BallTriangle stroke="#0a3d0371" />
+        ) : (
+          <ul>
             <li>
-              <div>
-                <h2>{item.player}</h2>
-              </div>
-              <div>
-                <h3>{item.song}</h3>
-              </div>
+              <h2>hello</h2>
             </li>
-          ))}
-        </ul>
+            {data.map((item) => (
+              <li>
+                <div>
+                  <h2>{item.player}</h2>
+                </div>
+                <div>
+                  <h3>{item.song}</h3>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

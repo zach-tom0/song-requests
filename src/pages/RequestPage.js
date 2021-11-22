@@ -1,3 +1,4 @@
+import { BallTriangle } from "react-loading-icons";
 import AuthModal from "../components/Auth/AuthModal";
 import SearchCard from "../components/SearchCard/SearchCard";
 import classes from "./RequestPage.module.css";
