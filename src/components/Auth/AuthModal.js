@@ -9,8 +9,6 @@ const AuthModal = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [isCodeCorrect, setIsCodeCorrect] = useState(true);
 
-  const checkPasscode = (passcode) => {};
-
   const handleSubmit = (event) => {
     event.preventDefault();
 

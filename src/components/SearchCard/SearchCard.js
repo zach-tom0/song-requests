@@ -1,17 +1,35 @@
 import classes from "./SearchCard.module.css";
-import data from "../../resources/data";
-import { BallTriangle } from "react-loading-icons";
-import { useState, useRef } from "react";
+import { TailSpin } from "react-loading-icons";
+import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 
 const SearchCard = (props) => {
   const [isSearching, setIsSearching] = useState(false);
+  const [typingTimeout, setTypingTimeout] = useState();
+  const [result, setResult] = useState([]);
   const searchInputValue = useRef();
 
   const showResults = () => {
     if (searchInputValue.current.value === "") {
+      setResult([]);
       setIsSearching(false);
     } else {
       setIsSearching(true);
+      if (typingTimeout) {
+        clearTimeout(typingTimeout);
+      }
+
+      setTypingTimeout(
+        setTimeout(async () => {
+          if (searchInputValue.current.value !== "") {
+            const result = await axios(
+              "http://hn.algolia.com/api/v1/search?hitsPerPage=50&query=" +
+                searchInputValue.current.value
+            );
+            setResult(result.data.hits);
+          }
+        }, 1000)
+      );
     }
   };
   return (
@@ -23,20 +41,14 @@ const SearchCard = (props) => {
         ref={searchInputValue}
       ></input>
       <div className={isSearching ? classes.results : classes.noResults}>
-        {data.length < 1 ? (
-          <BallTriangle stroke="#0a3d0371" />
+        {result.length < 1 ? (
+          <TailSpin speed={0.5} stroke="#0a3d0371" />
         ) : (
           <ul>
-            <li>
-              <h2>hello</h2>
-            </li>
-            {data.map((item) => (
+            {result.map((item) => (
               <li>
                 <div>
-                  <h2>{item.player}</h2>
-                </div>
-                <div>
-                  <h3>{item.song}</h3>
+                  <a href={item.url}>{item.title}</a>
                 </div>
               </li>
             ))}

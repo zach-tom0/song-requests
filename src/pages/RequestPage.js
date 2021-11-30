@@ -1,20 +1,20 @@
-import { BallTriangle } from "react-loading-icons";
+import Queue from "../components/Queue/Queue";
 import AuthModal from "../components/Auth/AuthModal";
 import SearchCard from "../components/SearchCard/SearchCard";
 import classes from "./RequestPage.module.css";
+import NowPlaying from "../components/NowPlaying/NowPlaying";
 
 const RequestPage = () => {
-  const style = {
-    "border-color": "black",
-  };
-
   return (
     <div className={classes.main}>
       <AuthModal />
       <div className={classes.div}>
         <SearchCard />
       </div>
-      <div className={classes.div}></div>
+      <div className={classes.div}>
+        <Queue />
+        <NowPlaying />
+      </div>
     </div>
   );
 };
