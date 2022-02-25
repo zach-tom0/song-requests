@@ -13,6 +13,9 @@ const App = () => {
         <Route path="/" exact>
           <RequestPage />
         </Route>
+        <Route path="/callback" exact>
+          <AuthPage />
+        </Route>
         <Route path="/spotify" exact>
           <AuthPage />
         </Route>

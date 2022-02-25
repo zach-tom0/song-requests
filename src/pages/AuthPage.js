@@ -1,10 +1,11 @@
+import { SpotifyAuthListener } from "react-spotify-auth";
 import AuthModal from "../components/Auth/AuthModal";
-
+import SpotifyForm from "../components/Auth/SpotifyForm";
 const AuthPage = () => {
   return (
     <>
-      <h2>Auth</h2>
       <AuthModal />
+      <SpotifyForm/>
     </>
   );
 };

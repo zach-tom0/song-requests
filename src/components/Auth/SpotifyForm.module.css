@@ -1,0 +1,18 @@
+.spotify {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 15% auto;
+    }
+
+.btn {
+    border-style: none;
+    padding: 1%;
+    border-radius: 10px;
+    text-decoration: double;
+}
+
+.btn:hover {
+    background-color: aquamarine;
+    color: white;
+}

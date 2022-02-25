@@ -5,9 +5,12 @@ import classes from "./RequestPage.module.css";
 import NowPlaying from "../components/NowPlaying/NowPlaying";
 
 const RequestPage = () => {
+  
+  
   return (
     <div className={classes.main}>
       <AuthModal />
+      
       <div className={classes.div}>
         <SearchCard />
       </div>
@@ -20,7 +23,7 @@ const RequestPage = () => {
           <NowPlaying />
         </div>
       </div>
-      
+
     </div>
   );
 };

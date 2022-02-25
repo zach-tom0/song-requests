@@ -5,7 +5,7 @@
 .queueList {
   padding: 5% 0;
   border-color: #0a3d0371;
-  border-style: solid none;
+  border-top-style: solid;
   overflow: hidden;
   margin-right: 3rem;
   height: 15rem;
