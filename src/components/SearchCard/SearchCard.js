@@ -1,6 +1,8 @@
 import classes from "./SearchCard.module.css";
 import { TailSpin } from "react-loading-icons";
+import SongCard from "../SongCard/SongCard";
 import { useState, useRef, useEffect } from "react";
+import ReactPaginate from 'react-paginate';
 import axios from "axios";
 
 const SearchCard = (props) => {
@@ -43,16 +45,26 @@ const SearchCard = (props) => {
       <div className={isSearching ? classes.results : classes.noResults}>
         {result.length < 1 ? (
           <TailSpin speed={0.5} stroke="#0a3d0371" />
-        ) : (
+        ) : (<>
           <ul>
             {result.map((item) => (
               <li>
                 <div>
-                  <a href={item.url}>{item.title}</a>
+                  <a href={item.url}><SongCard songname={item.title}/></a>
                 </div>
               </li>
             ))}
           </ul>
+          <ReactPaginate
+          breakLabel="..."
+          nextLabel="next >"
+          
+          pageRangeDisplayed={5}
+          
+          previousLabel="< previous"
+          renderOnZeroPageCount={null}
+        />
+        </>
         )}
       </div>
     </div>

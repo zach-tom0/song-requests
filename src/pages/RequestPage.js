@@ -11,10 +11,16 @@ const RequestPage = () => {
       <div className={classes.div}>
         <SearchCard />
       </div>
+      
       <div className={classes.div}>
-        <Queue />
-        <NowPlaying />
+        <div className={classes.queue}>
+          <Queue /> 
+        </div>  
+        <div className={classes.nowplaying}>
+          <NowPlaying />
+        </div>
       </div>
+      
     </div>
   );
 };

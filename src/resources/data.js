@@ -1,20 +1,15 @@
+import SongCard from "../components/SongCard/SongCard";
+
 const data = [
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
-  { player: 1, song: "songName" },
+  <SongCard songname="placeholder" artist="placehodler"/>,
+  <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>,
+  // <SongCard songname="placeholder" artist="placehodler"/>
 ];
 
 export default data;

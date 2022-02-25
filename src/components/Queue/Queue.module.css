@@ -1,27 +1,26 @@
 .queue {
   margin: 3rem auto;
-  margin-right: 3rem;
-  height: 15rem;
 }
 
 .queueList {
-  padding: 3rem auto;
-  height: 90%;
+  padding: 5% 0;
   border-color: #0a3d0371;
-  border-style: solid none none none;
+  border-style: solid none;
   overflow: hidden;
+  margin-right: 3rem;
+  height: 15rem;
 }
 
 .queueList ul {
   margin: auto;
   padding: 2rem;
-
-  animation: moveQueue 30s linear infinite;
+  list-style-type: none;
+  animation: moveQueue 10s linear infinite;
 }
 
 @keyframes moveQueue {
   0% {
-    transform: translateY(100%);
+    transform: translateY(90%);
   }
   100% {
     transform: translateY(-100%);

@@ -13,7 +13,7 @@ const Queue = () => {
             <ul>
               {data.map((item) => (
                 <li>
-                  {item.song}: {item.player}
+                  {item}
                 </li>
               ))}
             </ul>

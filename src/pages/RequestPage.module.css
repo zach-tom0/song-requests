@@ -1,5 +1,16 @@
 .div {
   width: 50%;
+  display: block;
+  
+}
+
+.queue {
+  height: 50%;
+  margin: 1% 0;
+}
+.nowplaying {
+  height: 50%;
+  margin: 1% 0;
 }
 
 .main {

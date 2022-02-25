@@ -7,6 +7,7 @@ import "./App.css";
 
 const App = () => {
   return (
+    <div className="App">
     <Layout>
       <Switch>
         <Route path="/" exact>
@@ -17,6 +18,7 @@ const App = () => {
         </Route>
       </Switch>
     </Layout>
+    </div>
   );
 };
 
