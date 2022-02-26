@@ -3,9 +3,11 @@ import { TailSpin } from "react-loading-icons";
 import SongCard from "../SongCard/SongCard";
 import { useState, useRef } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const SearchCard = (props) => {
   const [isSearching, setIsSearching] = useState(false);
+  const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
   const [typingTimeout, setTypingTimeout] = useState();
   const [result, setResult] = useState([]);
   const searchInputValue = useRef();
@@ -23,11 +25,24 @@ const SearchCard = (props) => {
       setTypingTimeout(
         setTimeout(async () => {
           if (searchInputValue.current.value !== "") {
-            const result = await axios(
-              "http://hn.algolia.com/api/v1/search?hitsPerPage=50&query=" +
-                searchInputValue.current.value
-            );
-            setResult(result.data.hits);
+            axios
+              .get("https://api.spotify.com/v1/search", {
+                headers: {
+                  Accept: "Application/json",
+                  "Content-Type": "application/json",
+                  Authorization: "Bearer " + token,
+                },
+                params: {
+                  q: searchInputValue.current.value,
+                  type: "track",
+                  limit: 20,
+                },
+              })
+              .then((res) => {
+                console.log(res.data.tracks.items);
+                setResult(res.data.tracks.items);
+              })
+              .catch((err) => {});
           }
         }, 1000)
       );
@@ -49,7 +64,20 @@ const SearchCard = (props) => {
             {result.map((item) => (
               <li>
                 <div>
-                  <a href={item.url}><SongCard songname={item.title}/></a>
+                  <a
+                    className={classes.a}
+                    onClick={() => {
+                      alert("queueing this song");
+                    }}
+                  >
+                    <div className={classes.songCard}>
+                      <SongCard
+                        albumCover={item.album.images[0].url}
+                        songname={item.name}
+                        artist={item.artists[0].name}
+                      />
+                    </div>
+                  </a>
                 </div>
               </li>
             ))}

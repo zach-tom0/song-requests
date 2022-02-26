@@ -1,36 +1,36 @@
 .card {
-    display: flex;
-    height: 8em;
+  display: flex;
+  height: 10em;
 }
 
 .albumcover {
-    border-radius: 20px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    margin: auto 3em;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  margin: auto 3em;
 }
 
 .songinfo {
-      overflow: hidden;
+  overflow: hidden;
 }
 
 .artist {
-    font-size: 1em;
+  margin-top: 0;
+  font-size: 1em;
 }
 
-.songname{
-    font-size: 2em;
+.songname {
+  font-size: 2em;
 }
 .songnameanimated {
-    animation: moveName 10s linear infinite;
-    font-size: 2em; 
+  animation: moveName 10s linear infinite;
+  font-size: 2em;
 }
 
-
 @keyframes moveName {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
