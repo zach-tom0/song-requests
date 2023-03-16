@@ -4,6 +4,7 @@ import SongCard from "../SongCard/SongCard";
 import { useState, useRef } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import img from "../../resources/frame.png";
 
 const SearchCard = (props) => {
   const [isSearching, setIsSearching] = useState(false);
@@ -50,7 +51,7 @@ const SearchCard = (props) => {
   };
   return (
     <div className={classes.div}>
-      <input
+      {/* <input
         className={classes.searchInput}
         placeholder="start typing to search..."
         onInput={showResults}
@@ -83,7 +84,9 @@ const SearchCard = (props) => {
             ))}
           </ul>
         )}
-      </div>
+      </div> 
+      */}
+      <img src={img}></img>
     </div>
   );
 };

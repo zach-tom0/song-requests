@@ -15,7 +15,7 @@
   margin: auto;
   padding: 2rem;
   list-style-type: none;
-  animation: moveQueue 10s linear infinite;
+  animation: moveQueue 100s linear infinite;
 }
 
 @keyframes moveQueue {

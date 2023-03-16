@@ -14,26 +14,29 @@ const NowPlaying = () => {
   });
 
   useEffect(() => {
-    axios
-      .get("	https://api.spotify.com/v1/me/player/currently-playing", {
-        headers: {
-          Accept: "Application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then((res) => {
-        setNowPlaying(true);
-        setSongInfo({
-          songname: res.data.item.name,
-          artist: res.data.item.artists[0].name,
-          albumCover: res.data.item.album.images[0].url,
+    const interval = setInterval(() => {
+      axios
+        .get("	https://api.spotify.com/v1/me/player/currently-playing", {
+          headers: {
+            Accept: "Application/json",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        })
+        .then((res) => {
+          setNowPlaying(true);
+          setSongInfo({
+            songname: res.data.item.name,
+            artist: res.data.item.artists[0].name,
+            albumCover: res.data.item.album.images[0].url,
+          });
+        })
+        .catch((err) => {
+          setNowPlaying(false);
         });
-      })
-      .catch((err) => {
-        setNowPlaying(false);
-      });
-  }, []);
+    }, 10000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className={classes.card}>
